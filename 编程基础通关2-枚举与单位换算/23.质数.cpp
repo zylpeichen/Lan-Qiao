@@ -1,14 +1,14 @@
 /*
-ÌâÄ¿ÃèÊö
+é¢˜ç›®æè¿°
 
-±¾ÌâÎªÌî¿ÕÌâ£¬Ö»ÐèÒªËã³ö½á¹ûºó£¬ÔÚ´úÂëÖÐÊ¹ÓÃÊä³öÓï¾ä½«ËùÌî½á¹ûÊä³ö¼´¿É¡£
+æœ¬é¢˜ä¸ºå¡«ç©ºé¢˜ï¼Œåªéœ€è¦ç®—å‡ºç»“æžœåŽï¼Œåœ¨ä»£ç ä¸­ä½¿ç”¨è¾“å‡ºè¯­å¥å°†æ‰€å¡«ç»“æžœè¾“å‡ºå³å¯ã€‚
 
-ÎÒÃÇÖªµÀµÚÒ»¸öÖÊÊýÊÇ 2¡¢µÚ¶þ¸öÖÊÊýÊÇ 3¡¢µÚÈý¸öÖÊÊýÊÇ 5¡­¡­
+æˆ‘ä»¬çŸ¥é“ç¬¬ä¸€ä¸ªè´¨æ•°æ˜¯ 2ã€ç¬¬äºŒä¸ªè´¨æ•°æ˜¯ 3ã€ç¬¬ä¸‰ä¸ªè´¨æ•°æ˜¯ 5â€¦â€¦
 
-ÇëÄã¼ÆËãµÚ 2019 ¸öÖÊÊýÊÇ¶àÉÙ£¿
+è¯·ä½ è®¡ç®—ç¬¬ 2019 ä¸ªè´¨æ•°æ˜¯å¤šå°‘ï¼Ÿ
 */
 
-
+// æ–¹æ³•ä¸€ï¼šè‡ªå†™
 #include <bits/stdc++.h>
 using namespace std;
 const int n = 2020;
@@ -16,16 +16,44 @@ int s[n];
 
 int main ()
 {
-	int m = 1; // m ´Ó 1 ¿ªÊ¼ÊÇÄ¬ÈÏ Êý×é s[1] = 2
-	for (int i = 3; m <= 2019; i++) {  // Ö±½Ó´ÓÖÊÊý 3 ¿ªÊ¼£¬Ö±µ½ m µ½ 2019 
-		for (int j = 2; j < i; j++) {  // Ñ­»·ÓÃÀ´ÅÐ¶Ï i ÊÇ·ñÊÇÖÊÊý 
-			if (i % j != 0 && i - 1 == j) {  //Èç¹û i ¶Ô j È¡Óà²»ÊÇ 0£¬²¢ÇÒ i - 1 = j 
-				s[++m] = i;		//ÔòÅÐ¶Ï³ö i ÊÇÖÊÊý²¢ÇÒ¼Óµ½Êý×é s µ±ÖÐ 
-				break;  //Ö±½ÓÌø³öÑ­»·Ìå 
+	int m = 1; // m ä»Ž 1 å¼€å§‹æ˜¯é»˜è®¤ æ•°ç»„ s[1] = 2
+	for (int i = 3; m <= 2019; i++) {  // ç›´æŽ¥ä»Žè´¨æ•° 3 å¼€å§‹ï¼Œç›´åˆ° m åˆ° 2019 
+		for (int j = 2; j < i; j++) {  // å¾ªçŽ¯ç”¨æ¥åˆ¤æ–­ i æ˜¯å¦æ˜¯è´¨æ•° 
+			if (i % j != 0 && i - 1 == j) {  //å¦‚æžœ i å¯¹ j å–ä½™ä¸æ˜¯ 0ï¼Œå¹¶ä¸” i - 1 = j 
+				s[++m] = i;		//åˆ™åˆ¤æ–­å‡º i æ˜¯è´¨æ•°å¹¶ä¸”åŠ åˆ°æ•°ç»„ s å½“ä¸­ 
+				break;  //ç›´æŽ¥è·³å‡ºå¾ªçŽ¯ä½“ 
 			}
-			if (i % j == 0) break;  // Èç¹û´æÔÚ i ¶Ô j È¡ÓàÊÇ 0£¬Ôò¾Í²»ÊÇÖÊÊý£¬Ö±½ÓÍË³öÑ­»·Ìå 
+			if (i % j == 0) break;  // å¦‚æžœå­˜åœ¨ i å¯¹ j å–ä½™æ˜¯ 0ï¼Œåˆ™å°±ä¸æ˜¯è´¨æ•°ï¼Œç›´æŽ¥é€€å‡ºå¾ªçŽ¯ä½“ 
 		}
 	}
 	cout << s[2019];
 	return 0;
 }
+
+
+//æ–¹æ³•äºŒï¼šè¯•é™¤æ³•åˆ¤æ–­è´¨æ•°â€”â€”æ•°è®º
+#include <bits/stdc++.h>
+using namespace std;
+
+bool is_prime(int x)
+{
+	for (int i = 2; i <= x / i; ++i) {
+		if (x % i == 0) return false;
+	}	
+		return true;
+	
+ } 
+ 
+ int main() 
+ {
+ 	int k = 2, cnt = 0;
+ 	while (true) {
+ 		if (is_prime(k))
+ 		cnt++;
+ 		if (cnt == 2019)
+ 		break;
+ 		k++;
+	 }
+	 cout << k;
+	 return 0;
+ }
