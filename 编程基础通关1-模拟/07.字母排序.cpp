@@ -6,8 +6,8 @@ int main()
 {
 	string s = "WHERETHEREISAWILLTHEREISAWAY";
 	sort(s.begin(),s.end());
-// sort º¯Êı,Óï·¨sort(start,end,cmp)
-//start ÆğÊ¼Î»ÖÃ;end ½áÊøÎ»ÖÃ;cmp ÅÅĞò·½·¨,ÉıĞòor½µĞò,¿É²»Ìî 
+// sort å‡½æ•°,è¯­æ³•sort(start,end,cmp)
+//start èµ·å§‹ä½ç½®;end ç»“æŸä½ç½®;cmp æ’åºæ–¹æ³•,å‡åºoré™åº,å¯ä¸å¡« 
 	cout << s << endl;
 	return 0;
 }
