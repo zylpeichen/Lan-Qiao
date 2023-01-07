@@ -16,7 +16,7 @@ int main ()
 	return 0;
  } 
  
- //方法二
+ //路陆路篓露镁
  #include<bits/stdc++.h>
  using namespace std;
  
