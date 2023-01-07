@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-const int maxn = 1e6 + 10;//ÒòÎªÌâÄ¿ÉÏËµÓÃÀıÒªĞ¡ÓÚ10µÄ6´Î·½ 
+const int maxn = 1e6 + 10;//å› ä¸ºé¢˜ç›®ä¸Šè¯´ç”¨ä¾‹è¦å°äº10çš„6æ¬¡æ–¹ 
 int a[maxn],b[maxn];
 
 bool cmp(int x,int y)
